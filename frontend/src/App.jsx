@@ -21,10 +21,13 @@ function App() {
     formData.append("file", file);
 
     try {
-      const res = await fetch("http://127.0.0.1:5000/summarize", {
-        method: "POST",
-        body: formData,
-      });
+      const res = await fetch(
+        "https://ai-tool-for-generating-patient-summary-gtna.onrender.com/summarize",
+        {
+          method: "POST",
+          body: formData,
+        }
+      );
 
       if (!res.ok) throw new Error("Failed to fetch summary");
 
